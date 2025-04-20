@@ -3,11 +3,11 @@
 import rospy
 
 
-from sensor_msgs.msg import Image
-from cv_bridge import CvBridge
+from sensor_msgs.msg import Image #importing 
+from cv_bridge import CvBridge #bridge is used to convert image from opencv to ros 
 
 
-import cv2
+import cv2 #importing cv2
 
 def callback(msg):
 
@@ -21,11 +21,11 @@ def main():
 
 
     rospy.init_node("edge_subscriber_node")
-    rospy.Subscriber("edge_image", Image, callback)
+    rospy.Subscriber("edge_image", Image, callback) #subscriber is used 
     
     rospy.spin()
 
-bridge = CvBridge()
+bridge = CvBridge() #bridge is used 
 
 
 if __name__ == "__main__":
