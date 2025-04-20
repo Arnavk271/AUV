@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-import depthai as dai
+import depthai as dai #depth ai is imported
 import cv2
 
 
 def main():
    
-    pipeline = dai.Pipeline()
+    pipeline = dai.Pipeline()#pipeline is used 
 
     
     cam = pipeline.createColorCamera()
@@ -33,7 +33,7 @@ def main():
             cv2.imshow("Camera View", frame)
 
             
-            if cv2.waitKey(1) & 0xFF == ord('e'):
+            if cv2.waitKey(1) & 0xFF == ord('e'): #we use e to exit from the code / function
                 break
 
     cv2.destroyAllWindows()
