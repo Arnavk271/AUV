@@ -12,10 +12,10 @@ def callback(msg):
 def convo():
     rospy.init_node('convo_node', anonymous=True)
     
-    name = raw_input("Enter your name: ")
+    name = raw_input("Enter your name: ") #to give input name
 
-    pub = rospy.Publisher('convo_topic', String, queue_size=10)
-    rospy.Subscriber('convo_topic', String, callback)
+    pub = rospy.Publisher('convo_topic', String, queue_size=10) # the publisher use
+    rospy.Subscriber('convo_topic', String, callback) #the subscriber use
 
     rospy.sleep(1)  #sleeps for 1 sec acc to notes
 
@@ -24,7 +24,7 @@ def convo():
     while not rospy.is_shutdown():
         msg = raw_input("You: ")
 
-        if msg.lower() == 'heh':
+        if msg.lower() == 'heh': #to quit the convo
             print("Exiting chat...")
             break
 
