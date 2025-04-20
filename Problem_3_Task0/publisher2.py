@@ -7,17 +7,17 @@ from bot.msg import bot_position
 
 def move_bot():
     rospy.init_node('bot_publisher_node', anonymous=True)
-    pub = rospy.Publisher('bot_position', bot_position, queue_size=10)
+    pub = rospy.Publisher('bot_position', bot_position, queue_size=10) #use of publisher
     rate = rospy.Rate(1)  
 
-    x= 0
+    x= 0 #we define and assign some random values initially 
     y= 0
     direction = "up"
 
     while not rospy.is_shutdown():
         command = raw_input("Enter command 1.forward 2.left 3.right: ").lower()
 
-
+#logic->
         if command == 'forward':
            if direction == "right":
                 x = x+1
@@ -59,7 +59,7 @@ def move_bot():
             print("Unknown command, try again.")
             continue
 
-
+#assigning the new position after updation
         position = bot_position()
         position.x = x
         position.y = y
